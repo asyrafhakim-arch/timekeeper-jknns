@@ -1,7 +1,9 @@
 ```html
 <!DOCTYPE html>
 <html lang="ms">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -10,40 +12,68 @@
 <meta name="theme-color"
       content="#111827">
 
-<title>TIMEKEEPER SYSTEM</title>
+<meta name="description"
+      content="TIMEKEEPER JKNNS - Sistem Pemasa Pembentangan">
+
+<title>TIMEKEEPER JKNNS</title>
+
 
 <style>
+
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
 
 :root {
 
     --header-color: #111827;
+
     --background-color: #0f172a;
+
     --panel-color: #1e293b;
+
     --timer-color: #020617;
+
     --button-color: #2563eb;
+
     --button-hover: #1d4ed8;
 
     --text-color: #ffffff;
+
     --secondary-text: #cbd5e1;
 
     --status-color: #22c55e;
+
     --accent-color: #38bdf8;
 
 }
 
 
-/* =========================
+/* =========================================================
    RESET
-========================= */
+========================================================= */
 
 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
 }
 
 
 body {
+
+    min-height: 100vh;
 
     font-family:
         Arial,
@@ -56,24 +86,21 @@ body {
     color:
         var(--text-color);
 
-    min-height: 100vh;
-
     overflow-x: hidden;
+
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header {
 
-    background:
-        var(--header-color);
+    min-height: 190px;
 
-    min-height: 180px;
-
-    padding: 25px 35px;
+    padding:
+        25px 35px;
 
     display: flex;
 
@@ -81,14 +108,20 @@ header {
 
     justify-content: center;
 
+    background:
+        var(--header-color);
+
     border-bottom:
         3px solid var(--accent-color);
 
     position: relative;
+
 }
 
 
 .header-content {
+
+    width: 100%;
 
     display: flex;
 
@@ -98,9 +131,8 @@ header {
 
     gap: 25px;
 
-    width: 100%;
-
     text-align: center;
+
 }
 
 
@@ -112,11 +144,12 @@ header {
 
     object-fit: contain;
 
-    flex-shrink: 0;
-
     display: none;
 
-    border-radius: 12px;
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
 }
 
 
@@ -127,19 +160,21 @@ header {
     flex-direction: column;
 
     justify-content: center;
+
 }
 
 
 .header-title {
 
     font-size:
-        clamp(28px, 5vw, 56px);
+        clamp(28px, 5vw, 58px);
 
-    font-weight: 800;
+    font-weight: 900;
+
+    line-height: 1.1;
 
     letter-spacing: 1px;
 
-    line-height: 1.1;
 }
 
 
@@ -151,44 +186,52 @@ header {
         var(--secondary-text);
 
     font-size:
-        clamp(16px, 2vw, 24px);
+        clamp(16px, 2vw, 25px);
+
 }
 
 
-/* =========================
+/* =========================================================
    MAIN
-========================= */
+========================================================= */
 
 main {
 
     width: 100%;
 
-    max-width: 1200px;
+    max-width: 1250px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    padding: 30px 20px 50px;
+    padding:
+        30px 20px 50px;
+
 }
 
 
-/* =========================
+/* =========================================================
    TIMER PANEL
-========================= */
+========================================================= */
 
 .timer-panel {
 
     background:
         var(--panel-color);
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     padding: 30px;
 
     box-shadow:
-        0 20px 50px
+        0 25px 70px
         rgba(0,0,0,.35);
+
 }
 
+
+/* =========================================================
+   SPEAKER
+========================================================= */
 
 .speaker-area {
 
@@ -201,6 +244,7 @@ main {
     gap: 10px;
 
     margin-bottom: 25px;
+
 }
 
 
@@ -214,31 +258,35 @@ main {
     text-transform: uppercase;
 
     letter-spacing: 2px;
+
+    font-weight: bold;
+
 }
 
 
 #speakerName {
 
-    width: min(700px, 100%);
+    width: min(750px, 100%);
 
-    background:
-        var(--timer-color);
+    padding: 15px;
+
+    border-radius: 12px;
 
     border:
         2px solid #334155;
 
+    outline: none;
+
+    background:
+        var(--timer-color);
+
     color:
         var(--text-color);
 
-    border-radius: 12px;
-
-    padding: 15px;
+    text-align: center;
 
     font-size: 22px;
 
-    text-align: center;
-
-    outline: none;
 }
 
 
@@ -246,12 +294,13 @@ main {
 
     border-color:
         var(--accent-color);
+
 }
 
 
-/* =========================
-   TIMER
-========================= */
+/* =========================================================
+   TIMER BOX
+========================================================= */
 
 .timer-box {
 
@@ -264,23 +313,22 @@ main {
     border-radius: 25px;
 
     padding:
-        clamp(30px, 6vw, 70px)
-        20px;
+        clamp(35px, 7vw, 75px) 20px;
 
     text-align: center;
 
     margin-bottom: 25px;
 
     transition:
-        border-color .3s ease,
-        box-shadow .3s ease;
+        .3s ease;
+
 }
 
 
 #timer {
 
     font-size:
-        clamp(70px, 15vw, 180px);
+        clamp(70px, 15vw, 185px);
 
     font-weight: 900;
 
@@ -290,26 +338,28 @@ main {
 
     font-variant-numeric:
         tabular-nums;
+
 }
 
 
 #timerStatus {
 
-    margin-top: 18px;
+    margin-top: 20px;
 
     font-size:
-        clamp(16px, 2vw, 24px);
+        clamp(17px, 2vw, 25px);
 
     font-weight: bold;
 
     color:
         var(--status-color);
+
 }
 
 
-/* =========================
+/* =========================================================
    PRESETS
-========================= */
+========================================================= */
 
 .presets {
 
@@ -321,6 +371,7 @@ main {
     gap: 10px;
 
     margin-bottom: 20px;
+
 }
 
 
@@ -328,14 +379,14 @@ main {
 
     border: none;
 
+    border-radius: 10px;
+
+    padding: 14px 8px;
+
     background:
         var(--button-color);
 
     color: white;
-
-    padding: 13px 8px;
-
-    border-radius: 10px;
 
     font-size: 16px;
 
@@ -344,6 +395,7 @@ main {
     cursor: pointer;
 
     transition: .2s;
+
 }
 
 
@@ -354,12 +406,13 @@ main {
 
     transform:
         translateY(-2px);
+
 }
 
 
-/* =========================
-   CONTROLS
-========================= */
+/* =========================================================
+   MAIN CONTROLS
+========================================================= */
 
 .controls {
 
@@ -369,6 +422,7 @@ main {
         repeat(4, 1fr);
 
     gap: 12px;
+
 }
 
 
@@ -376,14 +430,11 @@ main {
 
     border: none;
 
-    background:
-        var(--button-color);
+    border-radius: 12px;
+
+    padding: 17px;
 
     color: white;
-
-    padding: 16px;
-
-    border-radius: 12px;
 
     font-size: 18px;
 
@@ -392,50 +443,53 @@ main {
     cursor: pointer;
 
     transition: .2s;
+
 }
 
 
 .controls button:hover {
 
-    background:
-        var(--button-hover);
-
     transform:
         translateY(-2px);
+
 }
 
 
-.controls .start-btn {
+.start-btn {
 
     background:
         #16a34a;
+
 }
 
 
-.controls .pause-btn {
+.pause-btn {
 
     background:
         #f59e0b;
+
 }
 
 
-.controls .reset-btn {
+.reset-btn {
 
     background:
         #dc2626;
+
 }
 
 
-.controls .bell-btn {
+.bell-btn {
 
     background:
         #7c3aed;
+
 }
 
 
-/* =========================
+/* =========================================================
    SECONDARY CONTROLS
-========================= */
+========================================================= */
 
 .secondary-controls {
 
@@ -443,11 +497,14 @@ main {
 
     justify-content: center;
 
+    align-items: center;
+
     flex-wrap: wrap;
 
     gap: 10px;
 
     margin-top: 20px;
+
 }
 
 
@@ -460,23 +517,23 @@ main {
 
     color: white;
 
-    padding: 12px 20px;
+    padding:
+        12px 20px;
 
     border-radius: 10px;
 
     cursor: pointer;
 
     font-size: 15px;
+
 }
 
 
-/* =========================
-   SESSION INFO
-========================= */
+/* =========================================================
+   SESSION INFORMATION
+========================================================= */
 
 .session-info {
-
-    margin-top: 25px;
 
     display: grid;
 
@@ -484,13 +541,16 @@ main {
         repeat(3, 1fr);
 
     gap: 15px;
+
+    margin-top: 25px;
+
 }
 
 
 .info-card {
 
     background:
-        rgba(0,0,0,.2);
+        rgba(0,0,0,.18);
 
     border:
         1px solid #334155;
@@ -500,6 +560,7 @@ main {
     padding: 15px;
 
     text-align: center;
+
 }
 
 
@@ -510,7 +571,8 @@ main {
 
     font-size: 13px;
 
-    margin-bottom: 6px;
+    margin-bottom: 7px;
+
 }
 
 
@@ -519,12 +581,13 @@ main {
     font-size: 20px;
 
     font-weight: bold;
+
 }
 
 
-/* =========================
+/* =========================================================
    SETTINGS BUTTON
-========================= */
+========================================================= */
 
 .settings-button {
 
@@ -534,34 +597,35 @@ main {
 
     bottom: 20px;
 
-    width: 60px;
+    width: 62px;
 
-    height: 60px;
-
-    border-radius: 50%;
+    height: 62px;
 
     border: none;
+
+    border-radius: 50%;
 
     background:
         var(--button-color);
 
     color: white;
 
-    font-size: 26px;
+    font-size: 27px;
 
     cursor: pointer;
 
     z-index: 1000;
 
     box-shadow:
-        0 10px 25px
-        rgba(0,0,0,.4);
+        0 10px 30px
+        rgba(0,0,0,.45);
+
 }
 
 
-/* =========================
+/* =========================================================
    SETTINGS OVERLAY
-========================= */
+========================================================= */
 
 .settings-overlay {
 
@@ -570,7 +634,7 @@ main {
     inset: 0;
 
     background:
-        rgba(0,0,0,.75);
+        rgba(0,0,0,.78);
 
     display: none;
 
@@ -581,76 +645,96 @@ main {
     padding: 20px;
 
     z-index: 2000;
+
 }
 
 
 .settings-overlay.active {
 
     display: flex;
+
 }
 
 
+/* =========================================================
+   SETTINGS PANEL
+========================================================= */
+
 .settings-panel {
 
-    width: min(700px, 100%);
+    width:
+        min(760px, 100%);
 
-    max-height: 90vh;
+    max-height: 92vh;
 
     overflow-y: auto;
 
     background:
         var(--panel-color);
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     padding: 30px;
 
     box-shadow:
-        0 25px 80px
-        rgba(0,0,0,.6);
+        0 30px 100px
+        rgba(0,0,0,.65);
+
 }
 
 
 .settings-title {
 
-    font-size: 28px;
+    text-align: center;
 
-    font-weight: 800;
+    font-size: 29px;
+
+    font-weight: 900;
 
     margin-bottom: 25px;
 
-    text-align: center;
 }
 
+
+/* =========================================================
+   SETTING GROUP
+========================================================= */
 
 .setting-group {
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+
 }
 
 
-.setting-group label {
+.setting-group > label {
 
     display: block;
 
     margin-bottom: 8px;
 
-    font-weight: bold;
-
     color:
         var(--secondary-text);
+
+    font-weight: bold;
+
 }
 
+
+/* =========================================================
+   TEXT INPUT
+========================================================= */
 
 .setting-group input[type="text"] {
 
     width: 100%;
 
-    padding: 12px;
+    padding: 13px;
 
-    border-radius: 8px;
+    border:
+        1px solid #475569;
 
-    border: 1px solid #475569;
+    border-radius: 9px;
 
     background:
         #0f172a;
@@ -658,8 +742,13 @@ main {
     color: white;
 
     font-size: 16px;
+
 }
 
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
 
 .setting-group input[type="file"] {
 
@@ -667,42 +756,54 @@ main {
 
     padding: 12px;
 
+    border:
+        1px solid #475569;
+
+    border-radius: 9px;
+
     background:
         #0f172a;
 
-    border-radius: 8px;
-
     color: white;
 
-    border: 1px solid #475569;
 }
 
+
+/* =========================================================
+   RANGE
+========================================================= */
 
 .setting-group input[type="range"] {
 
     width: 100%;
+
 }
 
 
+/* =========================================================
+   COLOR INPUT
+========================================================= */
+
 .setting-group input[type="color"] {
 
-    width: 70px;
+    width: 65px;
 
-    height: 45px;
+    height: 42px;
 
     border: none;
 
     padding: 0;
 
+    background: transparent;
+
     cursor: pointer;
 
-    background: transparent;
 }
 
 
-/* =========================
+/* =========================================================
    COLOR GRID
-========================= */
+========================================================= */
 
 .color-grid {
 
@@ -711,7 +812,8 @@ main {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 15px;
+    gap: 12px;
+
 }
 
 
@@ -723,20 +825,19 @@ main {
 
     justify-content: space-between;
 
-    gap: 10px;
-
-    background:
-        rgba(0,0,0,.15);
-
     padding: 10px;
 
     border-radius: 10px;
+
+    background:
+        rgba(0,0,0,.18);
+
 }
 
 
-/* =========================
-   BELL AUDIO AREA
-========================= */
+/* =========================================================
+   AUDIO BOX
+========================================================= */
 
 .audio-box {
 
@@ -749,6 +850,7 @@ main {
     border-radius: 12px;
 
     padding: 15px;
+
 }
 
 
@@ -758,17 +860,18 @@ main {
 
     padding: 10px;
 
+    border-radius: 8px;
+
     background:
         #0f172a;
-
-    border-radius: 8px;
 
     color:
         var(--secondary-text);
 
+    font-size: 14px;
+
     word-break: break-word;
 
-    font-size: 14px;
 }
 
 
@@ -776,11 +879,12 @@ main {
 
     display: flex;
 
-    gap: 10px;
-
     flex-wrap: wrap;
 
+    gap: 10px;
+
     margin-top: 12px;
+
 }
 
 
@@ -788,15 +892,17 @@ main {
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    padding: 10px 15px;
-
-    cursor: pointer;
+    padding:
+        11px 16px;
 
     color: white;
 
     font-weight: bold;
+
+    cursor: pointer;
+
 }
 
 
@@ -804,6 +910,7 @@ main {
 
     background:
         #7c3aed;
+
 }
 
 
@@ -811,6 +918,7 @@ main {
 
     background:
         #dc2626;
+
 }
 
 
@@ -818,12 +926,13 @@ main {
 
     background:
         #0369a1;
+
 }
 
 
-/* =========================
-   SETTINGS BUTTONS
-========================= */
+/* =========================================================
+   SETTINGS ACTIONS
+========================================================= */
 
 .settings-actions {
 
@@ -835,6 +944,7 @@ main {
     gap: 10px;
 
     margin-top: 25px;
+
 }
 
 
@@ -846,13 +956,14 @@ main {
 
     border-radius: 10px;
 
-    cursor: pointer;
-
     color: white;
 
     font-size: 16px;
 
     font-weight: bold;
+
+    cursor: pointer;
+
 }
 
 
@@ -860,13 +971,7 @@ main {
 
     background:
         #16a34a;
-}
 
-
-.close-settings {
-
-    background:
-        #475569;
 }
 
 
@@ -874,29 +979,58 @@ main {
 
     background:
         #dc2626;
+
 }
 
 
-/* =========================
+.close-settings {
+
+    background:
+        #475569;
+
+}
+
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
 
-    text-align: center;
-
     padding: 20px;
+
+    text-align: center;
 
     color:
         var(--secondary-text);
 
     font-size: 13px;
+
 }
 
 
-/* =========================
+/* =========================================================
+   FULLSCREEN
+========================================================= */
+
+body.fullscreen-mode #timer {
+
+    font-size:
+        clamp(100px, 20vw, 270px);
+
+}
+
+
+body.fullscreen-mode header {
+
+    min-height: 150px;
+
+}
+
+
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media(max-width:900px) {
 
@@ -905,18 +1039,23 @@ footer {
         width: 110px;
 
         height: 110px;
+
     }
+
 
     .presets {
 
         grid-template-columns:
             repeat(3, 1fr);
+
     }
+
 
     .controls {
 
         grid-template-columns:
             repeat(2, 1fr);
+
     }
 
 }
@@ -926,83 +1065,76 @@ footer {
 
     header {
 
+        min-height: 140px;
+
         padding: 20px;
 
-        min-height: 140px;
     }
+
 
     .header-content {
 
         gap: 12px;
+
     }
+
 
     .logo {
 
         width: 85px;
 
         height: 85px;
+
     }
+
 
     .timer-panel {
 
         padding: 18px;
+
     }
+
 
     .presets {
 
         grid-template-columns:
             repeat(2, 1fr);
+
     }
+
 
     .controls {
 
         grid-template-columns:
             1fr;
+
     }
+
 
     .session-info {
 
         grid-template-columns:
             1fr;
+
     }
+
 
     .color-grid {
 
         grid-template-columns:
             1fr;
+
     }
+
 
     .settings-actions {
 
         grid-template-columns:
             1fr;
+
     }
 
 }
-
-
-/* =========================
-   FULLSCREEN
-========================= */
-
-body.fullscreen-mode header {
-
-    min-height: 150px;
-}
-
-
-body.fullscreen-mode main {
-
-    max-width: 1500px;
-}
-
-
-body.fullscreen-mode #timer {
-
-    font-size:
-        clamp(100px, 20vw, 260px);
-}
-
 
 </style>
 
@@ -1012,9 +1144,9 @@ body.fullscreen-mode #timer {
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
 <header>
 
@@ -1023,21 +1155,25 @@ body.fullscreen-mode #timer {
         <img
             id="headerLogo"
             class="logo"
-            alt="Logo"
-        >
+            alt="Logo">
 
         <div class="header-text">
 
             <div
                 id="headerTitle"
                 class="header-title">
-                TIMEKEEPER SYSTEM
+
+                TIMEKEEPER JKNNS
+
             </div>
+
 
             <div
                 id="headerSubtitle"
                 class="header-subtitle">
+
                 Presentation Timer
+
             </div>
 
         </div>
@@ -1047,9 +1183,9 @@ body.fullscreen-mode #timer {
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MAIN
-===================================================== -->
+========================================================= -->
 
 <main>
 
@@ -1061,14 +1197,16 @@ body.fullscreen-mode #timer {
         <div class="speaker-area">
 
             <div class="speaker-label">
+
                 NAMA PEMBENTANG
+
             </div>
+
 
             <input
                 type="text"
                 id="speakerName"
-                placeholder="Masukkan nama pembentang"
-            >
+                placeholder="Masukkan nama pembentang">
 
         </div>
 
@@ -1076,89 +1214,122 @@ body.fullscreen-mode #timer {
         <!-- TIMER -->
 
         <div
-            class="timer-box"
-            id="timerBox">
+            id="timerBox"
+            class="timer-box">
 
             <div id="timer">
+
                 10:00
+
             </div>
 
+
             <div id="timerStatus">
+
                 SIAP
+
             </div>
 
         </div>
 
 
-        <!-- PRESETS -->
+        <!-- PRESET -->
 
         <div class="presets">
 
             <button
                 class="preset-btn"
                 onclick="setPreset(3)">
+
                 3 MIN
+
             </button>
+
 
             <button
                 class="preset-btn"
                 onclick="setPreset(5)">
+
                 5 MIN
+
             </button>
+
 
             <button
                 class="preset-btn"
                 onclick="setPreset(7)">
+
                 7 MIN
+
             </button>
+
 
             <button
                 class="preset-btn"
                 onclick="setPreset(10)">
+
                 10 MIN
+
             </button>
+
 
             <button
                 class="preset-btn"
                 onclick="setPreset(15)">
+
                 15 MIN
+
             </button>
+
 
             <button
                 class="preset-btn"
                 onclick="setPreset(20)">
+
                 20 MIN
+
             </button>
 
         </div>
 
 
-        <!-- CONTROLS -->
+        <!-- MAIN CONTROLS -->
 
         <div class="controls">
 
             <button
                 class="start-btn"
                 onclick="startTimer()">
+
                 ▶ START
+
             </button>
+
 
             <button
                 class="pause-btn"
                 onclick="pauseTimer()">
+
                 ⏸ PAUSE
+
             </button>
+
 
             <button
                 class="reset-btn"
                 onclick="resetTimer()">
+
                 ↻ RESET
+
             </button>
+
 
             <button
                 class="bell-btn"
                 onclick="ringBell()">
+
                 🔔 BELL
+
             </button>
 
         </div>
@@ -1168,16 +1339,27 @@ body.fullscreen-mode #timer {
 
         <div class="secondary-controls">
 
-            <button onclick="adjustTime(30)">
+            <button
+                onclick="adjustTime(30)">
+
                 +30 SAAT
+
             </button>
 
-            <button onclick="adjustTime(-30)">
+
+            <button
+                onclick="adjustTime(-30)">
+
                 -30 SAAT
+
             </button>
 
-            <button onclick="toggleFullscreen()">
+
+            <button
+                onclick="toggleFullscreen()">
+
                 🖥 FULLSCREEN
+
             </button>
 
         </div>
@@ -1187,16 +1369,22 @@ body.fullscreen-mode #timer {
 
         <div class="session-info">
 
+
             <div class="info-card">
 
                 <div class="info-label">
+
                     MASA ASAL
+
                 </div>
+
 
                 <div
                     id="originalTime"
                     class="info-value">
+
                     10:00
+
                 </div>
 
             </div>
@@ -1205,13 +1393,18 @@ body.fullscreen-mode #timer {
             <div class="info-card">
 
                 <div class="info-label">
+
                     MASA BERBAKI
+
                 </div>
+
 
                 <div
                     id="remainingTime"
                     class="info-value">
+
                     10:00
+
                 </div>
 
             </div>
@@ -1220,13 +1413,18 @@ body.fullscreen-mode #timer {
             <div class="info-card">
 
                 <div class="info-label">
+
                     STATUS
+
                 </div>
+
 
                 <div
                     id="sessionStatus"
                     class="info-value">
+
                     SIAP
+
                 </div>
 
             </div>
@@ -1238,41 +1436,51 @@ body.fullscreen-mode #timer {
 </main>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-    TIMEKEEPER SYSTEM
+    TIMEKEEPER JKNNS
     &nbsp;|&nbsp;
     Presentation Timer
+    &nbsp;|&nbsp;
+    V2.0
 
 </footer>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SETTINGS BUTTON
-===================================================== -->
+========================================================= -->
 
 <button
     class="settings-button"
     onclick="openSettings()"
-    title="Settings">
+    title="Tetapan">
 
     ⚙️
 
 </button>
 
 
-<!-- =====================================================
+<!-- =========================================================
      SETTINGS OVERLAY
-===================================================== -->
+========================================================= -->
 
 <div
     id="settingsOverlay"
     class="settings-overlay">
 
+
     <div class="settings-panel">
 
+
         <div class="settings-title">
+
             ⚙️ TETAPAN TIMEKEEPER
+
         </div>
 
 
@@ -1281,13 +1489,16 @@ body.fullscreen-mode #timer {
         <div class="setting-group">
 
             <label>
+
                 NAMA TAJUK
+
             </label>
+
 
             <input
                 type="text"
                 id="settingTitle"
-                placeholder="TIMEKEEPER SYSTEM">
+                placeholder="TIMEKEEPER JKNNS">
 
         </div>
 
@@ -1297,8 +1508,11 @@ body.fullscreen-mode #timer {
         <div class="setting-group">
 
             <label>
+
                 SUBTAJUK
+
             </label>
+
 
             <input
                 type="text"
@@ -1313,8 +1527,11 @@ body.fullscreen-mode #timer {
         <div class="setting-group">
 
             <label>
+
                 🖼️ LOGO
+
             </label>
+
 
             <input
                 type="file"
@@ -1329,12 +1546,15 @@ body.fullscreen-mode #timer {
         <div class="setting-group">
 
             <label>
+
                 SAIZ LOGO:
                 <span id="logoSizeValue">
                     160
                 </span>
                 px
+
             </label>
+
 
             <input
                 type="range"
@@ -1346,37 +1566,42 @@ body.fullscreen-mode #timer {
         </div>
 
 
-        <!-- BELL AUDIO -->
+        <!-- BELL -->
 
         <div class="setting-group">
 
             <label>
-                🔔 BELL AUDIO
+
+                🔔 TETAPAN BELL
+
             </label>
 
+
             <div class="audio-box">
+
 
                 <input
                     type="file"
                     id="bellAudioInput"
                     accept="audio/*">
 
+
                 <div
                     id="bellFileName"
                     class="audio-file-name">
 
-                    Tiada fail bell dipilih.
-                    Sistem akan menggunakan
-                    bunyi bell asal.
+                    🔔 Official Bell:
+                    assets/school-bell.mp3
 
                 </div>
 
 
                 <div class="audio-buttons">
 
+
                     <button
                         class="test-bell"
-                        onclick="testUploadedBell()">
+                        onclick="testBell()">
 
                         ▶ TEST BELL
 
@@ -1385,9 +1610,9 @@ body.fullscreen-mode #timer {
 
                     <button
                         class="remove-bell"
-                        onclick="removeBellAudio()">
+                        onclick="removeUserBell()">
 
-                        🗑 REMOVE BELL
+                        🗑 REMOVE USER BELL
 
                     </button>
 
@@ -1396,11 +1621,13 @@ body.fullscreen-mode #timer {
                         class="official-bell"
                         onclick="useOfficialBell()">
 
-                        🔄 BELL ASAL
+                        🔄 OFFICIAL BELL
 
                     </button>
 
+
                 </div>
+
 
             </div>
 
@@ -1412,7 +1639,9 @@ body.fullscreen-mode #timer {
         <div class="setting-group">
 
             <label>
+
                 🎨 WARNA SISTEM
+
             </label>
 
 
@@ -1424,6 +1653,7 @@ body.fullscreen-mode #timer {
                     <span>
                         Header
                     </span>
+
 
                     <input
                         type="color"
@@ -1438,6 +1668,7 @@ body.fullscreen-mode #timer {
                         Background
                     </span>
 
+
                     <input
                         type="color"
                         id="colorBackground">
@@ -1450,6 +1681,7 @@ body.fullscreen-mode #timer {
                     <span>
                         Panel
                     </span>
+
 
                     <input
                         type="color"
@@ -1464,6 +1696,7 @@ body.fullscreen-mode #timer {
                         Timer
                     </span>
 
+
                     <input
                         type="color"
                         id="colorTimer">
@@ -1476,6 +1709,7 @@ body.fullscreen-mode #timer {
                     <span>
                         Button
                     </span>
+
 
                     <input
                         type="color"
@@ -1490,6 +1724,7 @@ body.fullscreen-mode #timer {
                         Status
                     </span>
 
+
                     <input
                         type="color"
                         id="colorStatus">
@@ -1503,6 +1738,7 @@ body.fullscreen-mode #timer {
                         Text
                     </span>
 
+
                     <input
                         type="color"
                         id="colorText">
@@ -1515,9 +1751,10 @@ body.fullscreen-mode #timer {
         </div>
 
 
-        <!-- ACTIONS -->
+        <!-- SETTINGS ACTION -->
 
         <div class="settings-actions">
+
 
             <button
                 class="save-settings"
@@ -1530,7 +1767,7 @@ body.fullscreen-mode #timer {
 
             <button
                 class="reset-settings"
-                onclick="resetSettings()">
+                onclick="resetAllSettings()">
 
                 ↻ DEFAULT
 
@@ -1545,7 +1782,9 @@ body.fullscreen-mode #timer {
 
             </button>
 
+
         </div>
+
 
     </div>
 
@@ -1554,14 +1793,14 @@ body.fullscreen-mode #timer {
 
 <script>
 
-/* =====================================================
+/* =========================================================
    DEFAULT SETTINGS
-===================================================== */
+========================================================= */
 
-const defaultSettings = {
+const DEFAULT_SETTINGS = {
 
     title:
-        "TIMEKEEPER SYSTEM",
+        "TIMEKEEPER JKNNS",
 
     subtitle:
         "Presentation Timer",
@@ -1596,61 +1835,123 @@ const defaultSettings = {
 };
 
 
-/* =====================================================
+/* =========================================================
+   OFFICIAL BELL
+========================================================= */
+
+const OFFICIAL_BELL_PATH =
+    "assets/school-bell.mp3";
+
+
+/* =========================================================
    TIMER VARIABLES
-===================================================== */
+========================================================= */
 
-let totalSeconds = 600;
-
-let remainingSeconds = 600;
-
-let timerInterval = null;
-
-let isRunning = false;
-
-let warning5Triggered = false;
-
-let warning1Triggered = false;
-
-let timeUpTriggered = false;
+let totalSeconds =
+    600;
 
 
-/* =====================================================
-   AUDIO VARIABLES
-===================================================== */
-
-let uploadedBellAudio = null;
-
-let uploadedBellName = "";
+let remainingSeconds =
+    600;
 
 
-/* =====================================================
+let timerInterval =
+    null;
+
+
+let isRunning =
+    false;
+
+
+let warning5Triggered =
+    false;
+
+
+let warning1Triggered =
+    false;
+
+
+let timeUpTriggered =
+    false;
+
+
+/* =========================================================
+   USER BELL
+========================================================= */
+
+let userBellData =
+    null;
+
+
+let userBellName =
+    "";
+
+
+/* =========================================================
+   CURRENT BELL MODE
+========================================================= */
+
+let bellMode =
+    "official";
+
+
+/*
+   official
+   user
+*/
+
+
+/* =========================================================
+   LOAD ALL
+========================================================= */
+
+function initializeSystem() {
+
+    loadSettings();
+
+    loadUserBell();
+
+    updateDisplay();
+
+    updateColor();
+
+}
+
+
+/* =========================================================
    LOAD SETTINGS
-===================================================== */
+========================================================= */
 
-function loadSavedSettings() {
+function loadSettings() {
+
+    let settings =
+        DEFAULT_SETTINGS;
+
 
     const saved =
         localStorage.getItem(
-            "timekeeperSettings"
+            "timekeeperJKNNSSettings"
         );
 
-    let settings =
-        defaultSettings;
 
     if (saved) {
 
         try {
 
             settings = {
-                ...defaultSettings,
+
+                ...DEFAULT_SETTINGS,
+
                 ...JSON.parse(saved)
+
             };
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
             console.log(
-                "Settings rosak. Default digunakan."
+                "Settings tidak sah."
             );
 
         }
@@ -1658,66 +1959,69 @@ function loadSavedSettings() {
     }
 
 
-    applySettings(settings);
-
-    loadBellAudio();
+    applySettings(
+        settings
+    );
 
 }
 
 
-/* =====================================================
+/* =========================================================
    APPLY SETTINGS
-===================================================== */
+========================================================= */
 
 function applySettings(settings) {
 
-    document.documentElement.style
-        .setProperty(
-            "--header-color",
-            settings.header
-        );
+    const root =
+        document.documentElement;
 
-    document.documentElement.style
-        .setProperty(
-            "--background-color",
-            settings.background
-        );
 
-    document.documentElement.style
-        .setProperty(
-            "--panel-color",
-            settings.panel
-        );
+    root.style.setProperty(
+        "--header-color",
+        settings.header
+    );
 
-    document.documentElement.style
-        .setProperty(
-            "--timer-color",
-            settings.timer
-        );
 
-    document.documentElement.style
-        .setProperty(
-            "--button-color",
-            settings.button
-        );
+    root.style.setProperty(
+        "--background-color",
+        settings.background
+    );
 
-    document.documentElement.style
-        .setProperty(
-            "--button-hover",
-            settings.button
-        );
 
-    document.documentElement.style
-        .setProperty(
-            "--status-color",
-            settings.status
-        );
+    root.style.setProperty(
+        "--panel-color",
+        settings.panel
+    );
 
-    document.documentElement.style
-        .setProperty(
-            "--text-color",
-            settings.text
-        );
+
+    root.style.setProperty(
+        "--timer-color",
+        settings.timer
+    );
+
+
+    root.style.setProperty(
+        "--button-color",
+        settings.button
+    );
+
+
+    root.style.setProperty(
+        "--button-hover",
+        settings.button
+    );
+
+
+    root.style.setProperty(
+        "--status-color",
+        settings.status
+    );
+
+
+    root.style.setProperty(
+        "--text-color",
+        settings.text
+    );
 
 
     document.getElementById(
@@ -1746,20 +2050,28 @@ function applySettings(settings) {
         logo.style.display =
             "block";
 
-    } else {
+    }
 
-        logo.removeAttribute("src");
+    else {
+
+        logo.removeAttribute(
+            "src"
+        );
 
         logo.style.display =
             "none";
+
     }
 
 
     logo.style.width =
-        settings.logoSize + "px";
+        settings.logoSize +
+        "px";
+
 
     logo.style.height =
-        settings.logoSize + "px";
+        settings.logoSize +
+        "px";
 
 
     document.getElementById(
@@ -1830,57 +2142,40 @@ function applySettings(settings) {
 }
 
 
-/* =====================================================
-   OPEN SETTINGS
-===================================================== */
-
-function openSettings() {
-
-    document.getElementById(
-        "settingsOverlay"
-    ).classList.add("active");
-
-}
-
-
-/* =====================================================
-   CLOSE SETTINGS
-===================================================== */
-
-function closeSettings() {
-
-    document.getElementById(
-        "settingsOverlay"
-    ).classList.remove("active");
-
-}
-
-
-/* =====================================================
+/* =========================================================
    SAVE SETTINGS
-===================================================== */
+========================================================= */
 
 function saveSettings() {
 
-    const currentSettings = {
+    const logo =
+        document.getElementById(
+            "headerLogo"
+        );
+
+
+    const settings = {
 
         title:
             document.getElementById(
                 "settingTitle"
-            ).value ||
-            defaultSettings.title,
+            ).value.trim()
+            ||
+            DEFAULT_SETTINGS.title,
+
 
         subtitle:
             document.getElementById(
                 "settingSubtitle"
-            ).value ||
-            defaultSettings.subtitle,
+            ).value.trim()
+            ||
+            DEFAULT_SETTINGS.subtitle,
+
 
         logo:
-            document.getElementById(
-                "headerLogo"
-            ).src ||
-            "",
+            logo.src
+            || "",
+
 
         logoSize:
             Number(
@@ -1889,35 +2184,42 @@ function saveSettings() {
                 ).value
             ),
 
+
         header:
             document.getElementById(
                 "colorHeader"
             ).value,
+
 
         background:
             document.getElementById(
                 "colorBackground"
             ).value,
 
+
         panel:
             document.getElementById(
                 "colorPanel"
             ).value,
+
 
         timer:
             document.getElementById(
                 "colorTimer"
             ).value,
 
+
         button:
             document.getElementById(
                 "colorButton"
             ).value,
 
+
         status:
             document.getElementById(
                 "colorStatus"
             ).value,
+
 
         text:
             document.getElementById(
@@ -1927,15 +2229,32 @@ function saveSettings() {
     };
 
 
-    localStorage.setItem(
-        "timekeeperSettings",
-        JSON.stringify(currentSettings)
-    );
+    try {
+
+        localStorage.setItem(
+            "timekeeperJKNNSSettings",
+            JSON.stringify(settings)
+        );
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Tetapan tidak dapat disimpan."
+        );
+
+        return;
+
+    }
 
 
     applySettings(
-        currentSettings
+        settings
     );
+
+
+    closeSettings();
 
 
     alert(
@@ -1945,17 +2264,19 @@ function saveSettings() {
 }
 
 
-/* =====================================================
-   RESET SETTINGS
-===================================================== */
+/* =========================================================
+   RESET ALL SETTINGS
+========================================================= */
 
-function resetSettings() {
+function resetAllSettings() {
 
-    if (
-        !confirm(
-            "Reset semua tetapan kepada default?"
-        )
-    ) {
+    const confirmReset =
+        confirm(
+            "Adakah anda pasti mahu reset semua tetapan?"
+        );
+
+
+    if (!confirmReset) {
 
         return;
 
@@ -1963,43 +2284,86 @@ function resetSettings() {
 
 
     localStorage.removeItem(
-        "timekeeperSettings"
+        "timekeeperJKNNSSettings"
     );
 
 
     localStorage.removeItem(
-        "timekeeperBellAudio"
+        "timekeeperJKNNSUserBell"
     );
 
 
     localStorage.removeItem(
-        "timekeeperBellName"
+        "timekeeperJKNNSUserBellName"
     );
 
 
-    uploadedBellAudio = null;
+    localStorage.removeItem(
+        "timekeeperJKNNSBellMode"
+    );
 
-    uploadedBellName = "";
+
+    userBellData =
+        null;
+
+
+    userBellName =
+        "";
+
+
+    bellMode =
+        "official";
 
 
     document.getElementById(
         "bellAudioInput"
-    ).value = "";
+    ).value =
+        "";
 
 
     applySettings(
-        defaultSettings
+        DEFAULT_SETTINGS
     );
 
 
-    updateBellFileDisplay();
+    updateBellDisplay();
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   SETTINGS OPEN
+========================================================= */
+
+function openSettings() {
+
+    document.getElementById(
+        "settingsOverlay"
+    ).classList.add(
+        "active"
+    );
+
+}
+
+
+/* =========================================================
+   SETTINGS CLOSE
+========================================================= */
+
+function closeSettings() {
+
+    document.getElementById(
+        "settingsOverlay"
+    ).classList.remove(
+        "active"
+    );
+
+}
+
+
+/* =========================================================
    LOGO UPLOAD
-===================================================== */
+========================================================= */
 
 document.getElementById(
     "logoInput"
@@ -2010,7 +2374,12 @@ document.getElementById(
         const file =
             event.target.files[0];
 
-        if (!file) return;
+
+        if (!file) {
+
+            return;
+
+        }
 
 
         if (
@@ -2024,6 +2393,7 @@ document.getElementById(
             );
 
             return;
+
         }
 
 
@@ -2034,29 +2404,33 @@ document.getElementById(
         reader.onload =
             function(e) {
 
-                document.getElementById(
-                    "headerLogo"
-                ).src =
+                const logo =
+                    document.getElementById(
+                        "headerLogo"
+                    );
+
+
+                logo.src =
                     e.target.result;
 
 
-                document.getElementById(
-                    "headerLogo"
-                ).style.display =
+                logo.style.display =
                     "block";
 
             };
 
 
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(
+            file
+        );
 
     }
 );
 
 
-/* =====================================================
+/* =========================================================
    LOGO SIZE
-===================================================== */
+========================================================= */
 
 document.getElementById(
     "logoSize"
@@ -2081,33 +2455,41 @@ document.getElementById(
 
 
         logo.style.width =
-            size + "px";
+            size +
+            "px";
+
 
         logo.style.height =
-            size + "px";
+            size +
+            "px";
 
     }
 );
 
 
-/* =====================================================
-   BELL AUDIO UPLOAD
-===================================================== */
+/* =========================================================
+   USER BELL UPLOAD
+========================================================= */
 
 document.getElementById(
     "bellAudioInput"
 ).addEventListener(
     "change",
-    uploadBellAudio
+    handleBellUpload
 );
 
 
-function uploadBellAudio(event) {
+function handleBellUpload(event) {
 
     const file =
         event.target.files[0];
 
-    if (!file) return;
+
+    if (!file) {
+
+        return;
+
+    }
 
 
     if (
@@ -2117,29 +2499,35 @@ function uploadBellAudio(event) {
     ) {
 
         alert(
-            "Sila pilih fail audio yang sah."
+            "Sila pilih fail audio."
         );
 
-        event.target.value = "";
+        event.target.value =
+            "";
 
         return;
+
     }
 
 
-    const maxSize =
-        15 * 1024 * 1024;
+    /*
+       Had 15 MB
+    */
 
-
-    if (file.size > maxSize) {
+    if (
+        file.size >
+        15 * 1024 * 1024
+    ) {
 
         alert(
-            "Saiz fail terlalu besar. " +
-            "Sila gunakan fail audio di bawah 15MB."
+            "Saiz audio melebihi 15MB."
         );
 
-        event.target.value = "";
+        event.target.value =
+            "";
 
         return;
+
     }
 
 
@@ -2150,32 +2538,33 @@ function uploadBellAudio(event) {
     reader.onload =
         function(e) {
 
-            uploadedBellAudio =
+            const data =
                 e.target.result;
-
-            uploadedBellName =
-                file.name;
 
 
             try {
 
                 localStorage.setItem(
-                    "timekeeperBellAudio",
-                    uploadedBellAudio
+                    "timekeeperJKNNSUserBell",
+                    data
                 );
+
 
                 localStorage.setItem(
-                    "timekeeperBellName",
-                    uploadedBellName
+                    "timekeeperJKNNSUserBellName",
+                    file.name
                 );
 
-            } catch (error) {
 
-                uploadedBellAudio =
-                    null;
+                localStorage.setItem(
+                    "timekeeperJKNNSBellMode",
+                    "user"
+                );
 
-                uploadedBellName =
-                    "";
+
+            }
+
+            catch(error) {
 
                 alert(
                     "Fail audio terlalu besar untuk disimpan dalam browser. " +
@@ -2183,51 +2572,85 @@ function uploadBellAudio(event) {
                 );
 
                 return;
+
             }
 
 
-            updateBellFileDisplay();
+            userBellData =
+                data;
+
+
+            userBellName =
+                file.name;
+
+
+            bellMode =
+                "user";
+
+
+            updateBellDisplay();
 
 
             alert(
-                "Bell audio berjaya dimuat naik."
+                "User Bell berjaya digunakan."
             );
 
         };
 
 
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(
+        file
+    );
 
 }
 
 
-/* =====================================================
-   LOAD BELL AUDIO
-===================================================== */
+/* =========================================================
+   LOAD USER BELL
+========================================================= */
 
-function loadBellAudio() {
+function loadUserBell() {
 
-    uploadedBellAudio =
+    userBellData =
         localStorage.getItem(
-            "timekeeperBellAudio"
+            "timekeeperJKNNSUserBell"
         );
 
-    uploadedBellName =
+
+    userBellName =
         localStorage.getItem(
-            "timekeeperBellName"
-        ) || "";
+            "timekeeperJKNNSUserBellName"
+        )
+        || "";
 
 
-    updateBellFileDisplay();
+    bellMode =
+        localStorage.getItem(
+            "timekeeperJKNNSBellMode"
+        )
+        || "official";
+
+
+    if (
+        !userBellData
+    ) {
+
+        bellMode =
+            "official";
+
+    }
+
+
+    updateBellDisplay();
 
 }
 
 
-/* =====================================================
+/* =========================================================
    UPDATE BELL DISPLAY
-===================================================== */
+========================================================= */
 
-function updateBellFileDisplay() {
+function updateBellDisplay() {
 
     const display =
         document.getElementById(
@@ -2236,118 +2659,154 @@ function updateBellFileDisplay() {
 
 
     if (
-        uploadedBellAudio &&
-        uploadedBellName
+        bellMode === "user" &&
+        userBellData &&
+        userBellName
     ) {
 
         display.textContent =
-            "🎵 " +
-            uploadedBellName;
+            "🎵 USER BELL: " +
+            userBellName;
 
-    } else {
+    }
+
+    else {
 
         display.textContent =
-            "Tiada fail bell dipilih. " +
-            "Sistem akan menggunakan bunyi bell asal.";
+            "🔔 OFFICIAL BELL: " +
+            OFFICIAL_BELL_PATH;
 
     }
 
 }
 
 
-/* =====================================================
-   REMOVE UPLOADED BELL
-===================================================== */
+/* =========================================================
+   OFFICIAL BELL
+========================================================= */
 
-function removeBellAudio() {
+function useOfficialBell() {
 
-    uploadedBellAudio =
+    bellMode =
+        "official";
+
+
+    localStorage.setItem(
+        "timekeeperJKNNSBellMode",
+        "official"
+    );
+
+
+    updateBellDisplay();
+
+
+    testBell();
+
+}
+
+
+/* =========================================================
+   REMOVE USER BELL
+========================================================= */
+
+function removeUserBell() {
+
+    userBellData =
         null;
 
-    uploadedBellName =
+
+    userBellName =
         "";
 
 
+    bellMode =
+        "official";
+
+
     localStorage.removeItem(
-        "timekeeperBellAudio"
+        "timekeeperJKNNSUserBell"
     );
 
 
     localStorage.removeItem(
-        "timekeeperBellName"
+        "timekeeperJKNNSUserBellName"
+    );
+
+
+    localStorage.setItem(
+        "timekeeperJKNNSBellMode",
+        "official"
     );
 
 
     document.getElementById(
         "bellAudioInput"
-    ).value = "";
+    ).value =
+        "";
 
 
-    updateBellFileDisplay();
+    updateBellDisplay();
 
 
     alert(
-        "Bell audio telah dibuang."
+        "User Bell telah dibuang. Official Bell digunakan."
     );
 
 }
 
 
-/* =====================================================
-   USE OFFICIAL / ORIGINAL BELL
-===================================================== */
+/* =========================================================
+   TEST BELL
+========================================================= */
 
-function useOfficialBell() {
+function testBell() {
 
-    removeBellAudio();
-
-}
-
-
-/* =====================================================
-   TEST UPLOADED BELL
-===================================================== */
-
-function testUploadedBell() {
-
-    ringBell();
+    playBell();
 
 }
 
 
-/* =====================================================
+/* =========================================================
    PLAY BELL
-===================================================== */
+========================================================= */
 
-function ringBell() {
+function playBell() {
 
-    if (uploadedBellAudio) {
+    if (
+        bellMode === "user" &&
+        userBellData
+    ) {
 
-        playUploadedBell();
+        playAudio(
+            userBellData
+        );
 
-    } else {
-
-        originalBellSound();
+        return;
 
     }
 
+
+    playAudio(
+        OFFICIAL_BELL_PATH
+    );
+
 }
 
 
-/* =====================================================
-   PLAY UPLOADED AUDIO
-===================================================== */
+/* =========================================================
+   PLAY AUDIO
+========================================================= */
 
-function playUploadedBell() {
+function playAudio(source) {
 
     const audio =
         new Audio(
-            uploadedBellAudio
+            source
         );
 
 
     audio.volume =
-        1.0;
+        1;
 
 
     audio.currentTime =
@@ -2359,9 +2818,13 @@ function playUploadedBell() {
             function(error) {
 
                 console.log(
-                    "Audio tidak dapat dimainkan:",
+                    "Audio gagal dimainkan:",
                     error
                 );
+
+                /*
+                   Fallback kepada synthesized bell
+                */
 
                 originalBellSound();
 
@@ -2371,9 +2834,83 @@ function playUploadedBell() {
 }
 
 
-/* =====================================================
-   ORIGINAL BELL SOUND
-===================================================== */
+/* =========================================================
+   BELL
+========================================================= */
+
+function ringBell() {
+
+    playBell();
+
+}
+
+
+/* =========================================================
+   5 MINUTES
+========================================================= */
+
+function bell5Minutes() {
+
+    ringBell();
+
+}
+
+
+/* =========================================================
+   1 MINUTE
+========================================================= */
+
+function bell1Minute() {
+
+    ringBell();
+
+
+    setTimeout(
+        function() {
+
+            ringBell();
+
+        },
+        700
+    );
+
+}
+
+
+/* =========================================================
+   TIME UP
+========================================================= */
+
+function bellTimeUp() {
+
+    ringBell();
+
+
+    setTimeout(
+        function() {
+
+            ringBell();
+
+        },
+        700
+    );
+
+
+    setTimeout(
+        function() {
+
+            ringBell();
+
+        },
+        1400
+    );
+
+}
+
+
+/* =========================================================
+   ORIGINAL SYNTHESIZED FALLBACK
+========================================================= */
 
 function originalBellSound() {
 
@@ -2384,11 +2921,8 @@ function originalBellSound() {
 
     if (!AudioContext) {
 
-        alert(
-            "Browser tidak menyokong Web Audio API."
-        );
-
         return;
+
     }
 
 
@@ -2401,11 +2935,9 @@ function originalBellSound() {
 
 
     const frequencies = [
-
         900,
         1200,
         1500
-
     ];
 
 
@@ -2414,6 +2946,7 @@ function originalBellSound() {
 
             const oscillator =
                 ctx.createOscillator();
+
 
             const gain =
                 ctx.createGain();
@@ -2482,64 +3015,9 @@ function originalBellSound() {
 }
 
 
-/* =====================================================
-   BELL PATTERNS
-===================================================== */
-
-function bell5Minutes() {
-
-    ringBell();
-
-}
-
-
-function bell1Minute() {
-
-    ringBell();
-
-
-    setTimeout(
-        function() {
-
-            ringBell();
-
-        },
-        700
-    );
-
-}
-
-
-function bellTimeUp() {
-
-    ringBell();
-
-
-    setTimeout(
-        function() {
-
-            ringBell();
-
-        },
-        700
-    );
-
-
-    setTimeout(
-        function() {
-
-            ringBell();
-
-        },
-        1400
-    );
-
-}
-
-
-/* =====================================================
-   TIMER PRESETS
-===================================================== */
+/* =========================================================
+   PRESETS
+========================================================= */
 
 function setPreset(minutes) {
 
@@ -2566,6 +3044,11 @@ function setPreset(minutes) {
         false;
 
 
+    updateStatus(
+        "SIAP"
+    );
+
+
     updateDisplay();
 
     updateColor();
@@ -2573,16 +3056,22 @@ function setPreset(minutes) {
 }
 
 
-/* =====================================================
-   START TIMER
-===================================================== */
+/* =========================================================
+   START
+========================================================= */
 
 function startTimer() {
 
-    if (isRunning) return;
+    if (isRunning) {
+
+        return;
+
+    }
 
 
-    if (remainingSeconds <= 0) {
+    if (
+        remainingSeconds <= 0
+    ) {
 
         return;
 
@@ -2607,9 +3096,9 @@ function startTimer() {
 }
 
 
-/* =====================================================
-   PAUSE TIMER
-===================================================== */
+/* =========================================================
+   PAUSE
+========================================================= */
 
 function pauseTimer() {
 
@@ -2639,9 +3128,9 @@ function pauseTimer() {
 }
 
 
-/* =====================================================
-   RESET TIMER
-===================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
 function resetTimer() {
 
@@ -2676,9 +3165,9 @@ function resetTimer() {
 }
 
 
-/* =====================================================
+/* =========================================================
    TIMER TICK
-===================================================== */
+========================================================= */
 
 function timerTick() {
 
@@ -2697,7 +3186,7 @@ function timerTick() {
 
 
     /*
-       5 MINUTE WARNING
+       5 MINUTES
     */
 
     if (
@@ -2720,7 +3209,7 @@ function timerTick() {
 
 
     /*
-       1 MINUTE WARNING
+       1 MINUTE
     */
 
     if (
@@ -2770,9 +3259,9 @@ function timerTick() {
 }
 
 
-/* =====================================================
-   UPDATE DISPLAY
-===================================================== */
+/* =========================================================
+   DISPLAY
+========================================================= */
 
 function updateDisplay() {
 
@@ -2787,17 +3276,13 @@ function updateDisplay() {
 
 
     const formatted =
-        String(minutes).padStart(
-            2,
-            "0"
-        )
+        String(minutes)
+            .padStart(2, "0")
         +
         ":"
         +
-        String(seconds).padStart(
-            2,
-            "0"
-        );
+        String(seconds)
+            .padStart(2, "0");
 
 
     document.getElementById(
@@ -2822,28 +3307,27 @@ function updateDisplay() {
         totalSeconds % 60;
 
 
+    const originalFormatted =
+        String(originalMinutes)
+            .padStart(2, "0")
+        +
+        ":"
+        +
+        String(originalSeconds)
+            .padStart(2, "0");
+
+
     document.getElementById(
         "originalTime"
     ).textContent =
-
-        String(originalMinutes)
-            .padStart(2, "0")
-
-        +
-
-        ":"
-
-        +
-
-        String(originalSeconds)
-            .padStart(2, "0");
+        originalFormatted;
 
 }
 
 
-/* =====================================================
+/* =========================================================
    STATUS
-===================================================== */
+========================================================= */
 
 function updateStatus(status) {
 
@@ -2861,9 +3345,9 @@ function updateStatus(status) {
 }
 
 
-/* =====================================================
+/* =========================================================
    TIMER COLOR
-===================================================== */
+========================================================= */
 
 function updateColor() {
 
@@ -2881,8 +3365,9 @@ function updateColor() {
         timerBox.style.borderColor =
             "#ef4444";
 
+
         timerBox.style.boxShadow =
-            "0 0 35px rgba(239,68,68,.45)";
+            "0 0 40px rgba(239,68,68,.5)";
 
     }
 
@@ -2894,8 +3379,9 @@ function updateColor() {
         timerBox.style.borderColor =
             "#f59e0b";
 
+
         timerBox.style.boxShadow =
-            "0 0 30px rgba(245,158,11,.35)";
+            "0 0 30px rgba(245,158,11,.4)";
 
     }
 
@@ -2906,8 +3392,9 @@ function updateColor() {
         timerBox.style.borderColor =
             "#dc2626";
 
+
         timerBox.style.boxShadow =
-            "0 0 45px rgba(220,38,38,.55)";
+            "0 0 50px rgba(220,38,38,.6)";
 
     }
 
@@ -2915,6 +3402,7 @@ function updateColor() {
 
         timerBox.style.borderColor =
             "var(--status-color)";
+
 
         timerBox.style.boxShadow =
             "none";
@@ -2924,9 +3412,9 @@ function updateColor() {
 }
 
 
-/* =====================================================
+/* =========================================================
    ADJUST TIME
-===================================================== */
+========================================================= */
 
 function adjustTime(seconds) {
 
@@ -2967,9 +3455,9 @@ function adjustTime(seconds) {
 }
 
 
-/* =====================================================
+/* =========================================================
    FULLSCREEN
-===================================================== */
+========================================================= */
 
 function toggleFullscreen() {
 
@@ -3001,32 +3489,38 @@ function toggleFullscreen() {
                 }
             );
 
-    } else {
+    }
+
+    else {
 
         document.exitFullscreen();
-
-        document.body
-            .classList
-            .remove(
-                "fullscreen-mode"
-            );
 
     }
 
 }
 
 
-/* =====================================================
-   FULLSCREEN CHANGE
-===================================================== */
+/* =========================================================
+   FULLSCREEN EVENT
+========================================================= */
 
 document.addEventListener(
     "fullscreenchange",
     function() {
 
         if (
-            !document.fullscreenElement
+            document.fullscreenElement
         ) {
+
+            document.body
+                .classList
+                .add(
+                    "fullscreen-mode"
+                );
+
+        }
+
+        else {
 
             document.body
                 .classList
@@ -3040,26 +3534,25 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   KEYBOARD SHORTCUTS
-===================================================== */
+/* =========================================================
+   KEYBOARD SHORTCUT
+========================================================= */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
+        const active =
+            document.activeElement;
+
+
         /*
            SPACE
-           START / PAUSE
         */
 
         if (
             event.code === "Space"
         ) {
-
-            const active =
-                document.activeElement;
-
 
             if (
                 active &&
@@ -3083,7 +3576,9 @@ document.addEventListener(
 
                 pauseTimer();
 
-            } else {
+            }
+
+            else {
 
                 startTimer();
 
@@ -3094,7 +3589,6 @@ document.addEventListener(
 
         /*
            R
-           RESET
         */
 
         if (
@@ -3109,7 +3603,6 @@ document.addEventListener(
 
         /*
            B
-           BELL
         */
 
         if (
@@ -3124,7 +3617,6 @@ document.addEventListener(
 
         /*
            F
-           FULLSCREEN
         */
 
         if (
@@ -3139,7 +3631,6 @@ document.addEventListener(
 
         /*
            ESC
-           CLOSE SETTINGS
         */
 
         if (
@@ -3154,9 +3645,9 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   CLOSE SETTINGS WHEN CLICK OUTSIDE
-===================================================== */
+/* =========================================================
+   CLICK OUTSIDE SETTINGS
+========================================================= */
 
 document.getElementById(
     "settingsOverlay"
@@ -3165,7 +3656,8 @@ document.getElementById(
     function(event) {
 
         if (
-            event.target === this
+            event.target ===
+            this
         ) {
 
             closeSettings();
@@ -3176,18 +3668,15 @@ document.getElementById(
 );
 
 
-/* =====================================================
+/* =========================================================
    INITIALIZE
-===================================================== */
+========================================================= */
 
-loadSavedSettings();
-
-updateDisplay();
-
-updateColor();
+initializeSystem();
 
 </script>
 
 </body>
+
 </html>
 ```
